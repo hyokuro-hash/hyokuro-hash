@@ -1,17 +1,16 @@
 
+/// <reference types="@react-three/fiber" />
 import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber';
 import * as THREE from 'three';
 
-// Fix: Augment the JSX namespace to include React Three Fiber intrinsic elements.
-// This resolves the "Property '...' does not exist on type 'JSX.IntrinsicElements'" errors
-// by ensuring that both the global JSX namespace and the React module's JSX namespace 
-// are correctly extended with ThreeElements from @react-three/fiber.
+// Fix: Consolidate JSX augmentation for Three.js elements.
+// This ensures that intrinsic elements like <points />, <bufferGeometry />, etc. 
+// are recognized by TypeScript in both global and React-specific namespaces.
 declare global {
   namespace JSX {
     interface IntrinsicElements extends ThreeElements {}
   }
-  // Fix: Modern React (18+) often looks for intrinsic elements within the React.JSX namespace.
   namespace React {
     namespace JSX {
       interface IntrinsicElements extends ThreeElements {}
@@ -19,7 +18,7 @@ declare global {
   }
 }
 
-const Particles = ({ count = 2000 }) => {
+const Particles = ({ count = 2000 }: { count?: number }) => {
   const mesh = useRef<THREE.Points>(null!);
   
   const particles = useMemo(() => {
@@ -50,7 +49,7 @@ const Particles = ({ count = 2000 }) => {
   });
 
   return (
-    // Fix: Intrinsic elements are now recognized through the global namespace augmentation.
+    // Fix: Intrinsic elements <points />, <bufferGeometry />, etc. are now properly typed.
     <points ref={mesh}>
       <bufferGeometry>
         <bufferAttribute
@@ -69,7 +68,7 @@ const ThreeBackground: React.FC = () => {
   return (
     <div className="absolute inset-0 z-0 bg-transparent">
       <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-        {/* Fix: Intrinsic element recognized through augmentation */}
+        {/* Fix: Intrinsic element <ambientLight /> is now recognized */}
         <ambientLight intensity={0.5} />
         <Particles />
       </Canvas>

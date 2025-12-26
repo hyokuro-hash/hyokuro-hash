@@ -15,22 +15,26 @@
         background-color: #FFFFFF;
         color: #333333;
         margin: 0;
+        overflow-x: hidden;
       }
       .font-heading { font-family: 'Montserrat', sans-serif; }
       .font-serif-1886 { font-family: 'Playfair Display', serif; }
       
-      /* 섹션 이동 시 헤더 높이만큼 여백 확보 */
       section[id] {
-        scroll-margin-top: 80px;
+        scroll-margin-top: 60px;
       }
 
-      /* Custom scrollbar for premium feel */
+      @media (min-width: 768px) {
+        section[id] {
+          scroll-margin-top: 80px;
+        }
+      }
+
       ::-webkit-scrollbar { width: 8px; }
       ::-webkit-scrollbar-track { background: #F5F5F5; }
       ::-webkit-scrollbar-thumb { background: #1B3B6F; border-radius: 4px; }
       ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
 
-      /* Hide scrollbar for horizontal scroll sections */
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
@@ -39,21 +43,25 @@
         scrollbar-width: none;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "three": "https://esm.sh/three@^0.182.0",
-    "@react-three/fiber": "https://esm.sh/@react-three/fiber@^9.4.2"
-  }
-}
-</script>
-</head>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19.0.0",
+        "react/": "https://esm.sh/react@19.0.0/",
+        "react-dom": "https://esm.sh/react-dom@19.0.0",
+        "react-dom/": "https://esm.sh/react-dom@19.0.0/",
+        "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+        "framer-motion": "https://esm.sh/framer-motion@11.11.17?deps=react@19.0.0",
+        "lucide-react": "https://esm.sh/lucide-react@0.460.0?deps=react@19.0.0",
+        "three": "https://esm.sh/three@0.170.0",
+        "@react-three/fiber": "https://esm.sh/@react-three/fiber@9.0.0?deps=react@19.0.0,three@0.170.0"
+      }
+    }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
+    <!-- index.tsx 엔트리 포인트를 모듈로 호출합니다 -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
