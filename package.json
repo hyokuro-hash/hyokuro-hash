@@ -3,6 +3,11 @@
   "name": "adstream-1886-global",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
@@ -14,6 +19,13 @@
   "devDependencies": {
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.1",
-    "@types/three": "0.170.0"
+    "@types/three": "0.170.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  },
+  "overrides": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   }
 }
