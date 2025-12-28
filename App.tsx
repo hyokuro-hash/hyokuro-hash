@@ -33,7 +33,15 @@ const App: React.FC = () => {
   const langMenuRef = useRef<HTMLDivElement>(null);
   const t = translations[lang];
 
-  // 언어 표시용 매핑 데이터 - 요청에 따라 "언어명(CODE)" 형식 적용
+  // Define service icons to fix "Cannot find name 'serviceIcons'" error
+  const serviceIcons = [
+    <Users key="s1" className="w-6 h-6 md:w-8 md:h-8" />,
+    <Target key="s2" className="w-6 h-6 md:w-8 md:h-8" />,
+    <Globe key="s3" className="w-6 h-6 md:w-8 md:h-8" />,
+    <BarChart3 key="s4" className="w-6 h-6 md:w-8 md:h-8" />,
+    <Languages key="s5" className="w-6 h-6 md:w-8 md:h-8" />
+  ];
+
   const langLabels: Record<Language, string> = {
     [Language.KR]: '한국어(KR)',
     [Language.EN]: 'English(EN)',
@@ -74,14 +82,6 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setIsMobileMenuOpen(false);
   };
-
-  const serviceIcons = [
-    <Users className="w-6 h-6" />,
-    <Target className="w-6 h-6" />,
-    <Globe className="w-6 h-6" />,
-    <BarChart3 className="w-6 h-6" />,
-    <Languages className="w-6 h-6" />
-  ];
 
   const creators: Creator[] = [
     { id: 'c-1', name: lang === Language.KR ? '지아' : 'JIA', category: t.creators.categories[1], followers: '1.9M', image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=800', platforms: ['youtube', 'instagram'] },
@@ -164,7 +164,7 @@ const App: React.FC = () => {
               </button>
               <AnimatePresence>
                 {isLangOpen && (
-                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="absolute right-0 mt-3 w-52 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-[100]">
+                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="absolute right-0 mt-3 w-56 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-[100]">
                     <div className="py-2">
                       {Object.values(Language).map((l) => (
                         <button 
@@ -173,7 +173,7 @@ const App: React.FC = () => {
                           className={`w-full px-5 py-3 text-left text-xs font-bold transition-colors hover:bg-gray-50 flex items-center justify-between ${lang === l ? 'text-[#D4AF37] bg-gray-50/50' : 'text-[#1B3B6F]'}`}
                         >
                           {langLabels[l]}
-                          {lang === l && <div className="w-1 h-1 rounded-full bg-[#D4AF37]" />}
+                          {lang === l && <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />}
                         </button>
                       ))}
                     </div>
@@ -319,7 +319,7 @@ const App: React.FC = () => {
 
       {/* CTA / Apply Section */}
       <section id="apply" className="py-32 bg-[#1B3B6F] relative overflow-hidden scroll-mt-20">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#D4AF37]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#D4AF37]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none select-none" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="w-24 h-24 bg-[#D4AF37] rounded-[32px] flex items-center justify-center mx-auto mb-10 shadow-3xl rotate-12">
@@ -335,14 +335,17 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Footer Area */}
-      <footer className="bg-[#0A1120] text-white pt-24 pb-12 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* Footer Area - Completely Clean and Robust */}
+      <footer className="bg-[#0A1120] text-white pt-24 pb-12 relative z-50">
+        {/* Superior Horizontal Divider - Prevents Subpixel Border Artifacts */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gray-800 pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-6 relative">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
             <div className="lg:col-span-2">
               <button onClick={scrollToTop} className="text-3xl font-heading font-bold mb-8 block">Adstream | <span className="text-[#D4AF37]">1886</span></button>
               <p className="text-gray-400 max-w-md mb-10 text-lg leading-relaxed">{t.footer.desc}</p>
-              <div className="flex space-x-8 text-gray-500">
+              <div className="flex space-x-8 text-gray-500 relative z-10">
                 <Instagram className="cursor-pointer hover:text-[#D4AF37] transition-all transform hover:scale-110" />
                 <Youtube className="cursor-pointer hover:text-[#D4AF37] transition-all transform hover:scale-110" />
                 <Globe className="cursor-pointer hover:text-[#D4AF37] transition-all transform hover:scale-110" />
@@ -365,12 +368,16 @@ const App: React.FC = () => {
               </ul>
             </div>
           </div>
-          {/* Bottom Copyright Section: Clean, flat design with no artifacts */}
-          <div className="pt-10 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500">
-            <p>&copy; 2025 Adstream | 1886. {t.footer.rights}</p>
-            <div className="flex space-x-10 mt-6 md:mt-0">
-              <button onClick={handleWipClick} className="hover:text-[#D4AF37] transition-colors">{t.footer.terms}</button>
-              <button onClick={handleWipClick} className="hover:text-[#D4AF37] transition-colors">{t.footer.privacy}</button>
+          
+          {/* Bottom Copyright Section: Flat and Clean with explicit horizontal divider */}
+          <div className="relative pt-10">
+            <div className="absolute top-0 left-0 w-full h-px bg-gray-800/50" />
+            <div className="flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500">
+              <p className="mb-4 md:mb-0">&copy; 2025 Adstream | 1886. {t.footer.rights}</p>
+              <div className="flex space-x-10">
+                <button onClick={handleWipClick} className="hover:text-[#D4AF37] transition-colors">{t.footer.terms}</button>
+                <button onClick={handleWipClick} className="hover:text-[#D4AF37] transition-colors">{t.footer.privacy}</button>
+              </div>
             </div>
           </div>
         </div>

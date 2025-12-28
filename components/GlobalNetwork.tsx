@@ -44,8 +44,8 @@ const GlobalNetwork: React.FC<{ lang: Language }> = ({ lang }) => {
   ];
 
   return (
-    <section className="py-12 md:py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-5 md:px-6">
+    <section className="py-12 md:py-24 bg-white overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16 text-left">
           <div className="max-w-2xl">
             <motion.div
@@ -87,9 +87,9 @@ const GlobalNetwork: React.FC<{ lang: Language }> = ({ lang }) => {
                 <img 
                   src={hub.image} 
                   alt={`${hub.name} Regional View`} 
-                  className="w-full h-full object-cover opacity-60 filter transition-all duration-1000 group-hover:scale-105 group-hover:opacity-100"
+                  className="w-full h-full object-cover opacity-60 filter transition-all duration-1000 group-hover:scale-105 group-hover:opacity-100 pointer-events-none"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/40 to-transparent transition-all duration-700 group-hover:opacity-10" />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/40 to-transparent transition-all duration-700 group-hover:opacity-10 pointer-events-none" />
               </div>
 
               <div className="relative h-full p-5 md:p-10 flex flex-col justify-between z-10 text-left">
@@ -121,13 +121,13 @@ const GlobalNetwork: React.FC<{ lang: Language }> = ({ lang }) => {
                 </div>
               </div>
 
-              <div className="absolute bottom-0 left-0 h-1.5 md:h-3.5 transition-all duration-700 w-0 group-hover:w-full bg-[#D4AF37]" />
+              <div className="absolute bottom-0 left-0 h-1.5 md:h-3.5 transition-all duration-700 w-0 group-hover:w-full bg-[#D4AF37] pointer-events-none" />
             </motion.div>
           ))}
         </div>
 
         <div className="mt-8 md:mt-24 p-6 md:p-12 bg-[#1B3B6F] rounded-[24px] md:rounded-[48px] text-white flex flex-col md:flex-row items-center justify-around gap-6 md:gap-12 shadow-2xl relative overflow-hidden">
-           <div className="absolute top-0 right-0 w-48 h-48 md:w-96 md:h-96 bg-[#D4AF37]/20 rounded-full blur-[80px] md:blur-[120px] -translate-y-1/2 translate-x-1/2" />
+           <div className="absolute top-0 right-0 w-48 h-48 md:w-96 md:h-96 bg-[#D4AF37]/20 rounded-full blur-[80px] md:blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none select-none" />
            
            <div className="text-center relative z-10 group w-full md:w-auto">
              <p className="text-white/50 text-[9px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] mb-1.5 md:mb-4 font-bold">{t.labels[0]}</p>
