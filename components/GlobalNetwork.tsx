@@ -2,8 +2,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Globe, ArrowUpRight } from 'lucide-react';
+import { Language } from '../types';
+import { translations } from '../translations';
 
-const GlobalNetwork: React.FC = () => {
+const GlobalNetwork: React.FC<{ lang: Language }> = ({ lang }) => {
+  const t = translations[lang].network;
+  
   const hubs = [
     {
       id: 'us',
@@ -11,7 +15,7 @@ const GlobalNetwork: React.FC = () => {
       region: 'Americas Hub',
       city: 'New York, USA',
       image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&q=80&w=1200',
-      description: '북미 시장 마케팅 및 글로벌 브랜드 파트너십 허브'
+      description: t.hubs.us
     },
     {
       id: 'kr',
@@ -19,7 +23,7 @@ const GlobalNetwork: React.FC = () => {
       region: 'East Asia Hub',
       city: 'Seoul, Korea',
       image: 'https://images.unsplash.com/photo-1504297050568-910d24c426d3?auto=format&fit=crop&q=80&w=1200',
-      description: 'Adstream | 1886 글로벌 본사 및 기술/운영 총괄'
+      description: t.hubs.kr
     },
     {
       id: 'cn',
@@ -27,7 +31,7 @@ const GlobalNetwork: React.FC = () => {
       region: 'Greater China',
       city: 'Shanghai, China',
       image: 'https://images.unsplash.com/photo-1506158669146-619067262a00?auto=format&fit=crop&q=80&w=1200',
-      description: '중화권 MCN 네트워크 및 대규모 콘텐츠 배급 거점'
+      description: t.hubs.cn
     },
     {
       id: 'sea',
@@ -35,7 +39,7 @@ const GlobalNetwork: React.FC = () => {
       region: 'SEA Gateway',
       city: 'HCMC, Vietnam',
       image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&q=80&w=1200',
-      description: '동남아시아 신흥 시장 성장 전략 및 로컬라이징 센터'
+      description: t.hubs.sea
     }
   ];
 
@@ -50,18 +54,21 @@ const GlobalNetwork: React.FC = () => {
               className="flex items-center space-x-2 text-[#D4AF37] mb-2 md:mb-4"
             >
               <Globe size={14} className="md:w-5 md:h-5" />
-              <span className="text-[9px] md:text-sm font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase">Global Pipeline</span>
+              <span className="text-[9px] md:text-sm font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase">{t.tag}</span>
             </motion.div>
             <motion.h2 
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-2xl md:text-5xl font-bold text-[#1B3B6F] mb-3 md:mb-6 font-heading leading-tight"
             >
-              네트워크 거점 <span className="font-serif-1886 text-[#D4AF37] italic">Detail</span>
+              {lang === Language.KR ? (
+                <>네트워크 거점 <span className="font-serif-1886 text-[#D4AF37] italic">Detail</span></>
+              ) : (
+                <><span className="font-serif-1886 text-[#D4AF37] italic">Detail</span> of Network Hubs</>
+              )}
             </motion.h2>
             <p className="text-gray-600 text-[13px] md:text-lg leading-relaxed">
-              북미부터 아시아까지 연결된 글로벌 파이프라인. <br className="md:hidden" />
-              현지 인프라를 통해 최적의 세계화 전략을 지원합니다.
+              {t.desc}
             </p>
           </div>
         </div>
@@ -123,19 +130,19 @@ const GlobalNetwork: React.FC = () => {
            <div className="absolute top-0 right-0 w-48 h-48 md:w-96 md:h-96 bg-[#D4AF37]/20 rounded-full blur-[80px] md:blur-[120px] -translate-y-1/2 translate-x-1/2" />
            
            <div className="text-center relative z-10 group w-full md:w-auto">
-             <p className="text-white/50 text-[9px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] mb-1.5 md:mb-4 font-bold">Total Partners</p>
+             <p className="text-white/50 text-[9px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] mb-1.5 md:mb-4 font-bold">{t.labels[0]}</p>
              <p className="text-3xl md:text-6xl font-black text-[#D4AF37] transition-transform duration-500 group-hover:scale-105">500+</p>
            </div>
            <div className="hidden md:block w-px h-20 bg-white/15" />
            <div className="md:hidden w-12 h-px bg-white/10" />
            <div className="text-center relative z-10 group w-full md:w-auto">
-             <p className="text-white/50 text-[9px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] mb-1.5 md:mb-4 font-bold">Service Languages</p>
+             <p className="text-white/50 text-[9px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] mb-1.5 md:mb-4 font-bold">{t.labels[1]}</p>
              <p className="text-3xl md:text-6xl font-black text-white transition-transform duration-500 group-hover:scale-105">6 Multi</p>
            </div>
            <div className="hidden md:block w-px h-20 bg-white/15" />
            <div className="md:hidden w-12 h-px bg-white/10" />
            <div className="text-center relative z-10 group w-full md:w-auto">
-             <p className="text-white/50 text-[9px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] mb-1.5 md:mb-4 font-bold">Global Presence</p>
+             <p className="text-white/50 text-[9px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] mb-1.5 md:mb-4 font-bold">{t.labels[2]}</p>
              <p className="text-3xl md:text-6xl font-black text-white transition-transform duration-500 group-hover:scale-105">25 Global</p>
            </div>
         </div>

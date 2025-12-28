@@ -19,6 +19,7 @@ export interface CaseStudy {
 export enum Language {
   KR = 'KR',
   EN = 'EN',
+  JP = 'JP',
   CN = 'CN',
   VI = 'VI',
   TH = 'TH',
