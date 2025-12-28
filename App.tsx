@@ -33,7 +33,7 @@ const App: React.FC = () => {
   const langMenuRef = useRef<HTMLDivElement>(null);
   const t = translations[lang];
 
-  // 언어 표시용 매핑 데이터
+  // 언어 표시용 매핑 데이터 - 요청에 따라 "언어명(CODE)" 형식 적용
   const langLabels: Record<Language, string> = {
     [Language.KR]: '한국어(KR)',
     [Language.EN]: 'English(EN)',
@@ -104,7 +104,7 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen overflow-x-hidden selection:bg-[#D4AF37] selection:text-white">
+    <div className="min-h-screen overflow-x-hidden selection:bg-[#D4AF37] selection:text-white bg-white">
       {/* WIP Modal */}
       <AnimatePresence>
         {isWipModalOpen && (
@@ -164,7 +164,7 @@ const App: React.FC = () => {
               </button>
               <AnimatePresence>
                 {isLangOpen && (
-                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="absolute right-0 mt-3 w-48 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-[100]">
+                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="absolute right-0 mt-3 w-52 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-[100]">
                     <div className="py-2">
                       {Object.values(Language).map((l) => (
                         <button 
@@ -335,7 +335,8 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      <footer className="bg-[#0A1120] text-white pt-24 pb-12 border-t border-white/5">
+      {/* Footer Area */}
+      <footer className="bg-[#0A1120] text-white pt-24 pb-12 border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
             <div className="lg:col-span-2">
@@ -364,11 +365,12 @@ const App: React.FC = () => {
               </ul>
             </div>
           </div>
-          <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-600">
+          {/* Bottom Copyright Section: Clean, flat design with no artifacts */}
+          <div className="pt-10 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500">
             <p>&copy; 2025 Adstream | 1886. {t.footer.rights}</p>
             <div className="flex space-x-10 mt-6 md:mt-0">
-              <button onClick={handleWipClick} className="hover:text-[#D4AF37]">{t.footer.terms}</button>
-              <button onClick={handleWipClick} className="hover:text-[#D4AF37]">{t.footer.privacy}</button>
+              <button onClick={handleWipClick} className="hover:text-[#D4AF37] transition-colors">{t.footer.terms}</button>
+              <button onClick={handleWipClick} className="hover:text-[#D4AF37] transition-colors">{t.footer.privacy}</button>
             </div>
           </div>
         </div>
