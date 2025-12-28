@@ -33,6 +33,17 @@ const App: React.FC = () => {
   const langMenuRef = useRef<HTMLDivElement>(null);
   const t = translations[lang];
 
+  // 언어 표시용 매핑 데이터
+  const langLabels: Record<Language, string> = {
+    [Language.KR]: '한국어(KR)',
+    [Language.EN]: 'English(EN)',
+    [Language.JP]: '日本語(JP)',
+    [Language.CN]: '简体中文(CN)',
+    [Language.VI]: 'Tiếng Việt(VI)',
+    [Language.TH]: 'ไทย(TH)',
+    [Language.ID]: 'Bahasa Indonesia(ID)'
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
@@ -146,17 +157,26 @@ const App: React.FC = () => {
 
           <div className="flex items-center space-x-4">
             <div className="relative" ref={langMenuRef}>
-              <button onClick={() => setIsLangOpen(!isLangOpen)} className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-gray-50 border border-gray-200 text-[#1B3B6F] text-xs font-bold">
-                <Globe size={14} />
-                <span>{lang}</span>
-                <ChevronDown size={12} className={isLangOpen ? 'rotate-180' : ''} />
+              <button onClick={() => setIsLangOpen(!isLangOpen)} className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gray-50 border border-gray-200 text-[#1B3B6F] text-xs font-bold transition-all hover:border-[#D4AF37]">
+                <Globe size={14} className="text-[#D4AF37]" />
+                <span>{langLabels[lang]}</span>
+                <ChevronDown size={12} className={`transition-transform duration-300 ${isLangOpen ? 'rotate-180' : ''}`} />
               </button>
               <AnimatePresence>
                 {isLangOpen && (
-                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="absolute right-0 mt-2 w-32 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
-                    {Object.values(Language).map((l) => (
-                      <button key={l} onClick={() => { setLang(l); setIsLangOpen(false); }} className={`w-full px-4 py-2 text-left text-xs font-bold hover:bg-gray-50 ${lang === l ? 'text-[#D4AF37]' : 'text-[#1B3B6F]'}`}>{l}</button>
-                    ))}
+                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="absolute right-0 mt-3 w-48 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-[100]">
+                    <div className="py-2">
+                      {Object.values(Language).map((l) => (
+                        <button 
+                          key={l} 
+                          onClick={() => { setLang(l); setIsLangOpen(false); }} 
+                          className={`w-full px-5 py-3 text-left text-xs font-bold transition-colors hover:bg-gray-50 flex items-center justify-between ${lang === l ? 'text-[#D4AF37] bg-gray-50/50' : 'text-[#1B3B6F]'}`}
+                        >
+                          {langLabels[l]}
+                          {lang === l && <div className="w-1 h-1 rounded-full bg-[#D4AF37]" />}
+                        </button>
+                      ))}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -219,7 +239,6 @@ const App: React.FC = () => {
             <p className="text-gray-500">{t.creators.desc}</p>
           </div>
           
-          {/* Mobile Horizontal Scroll Container */}
           <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-10 no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 md:overflow-visible">
             {creators.map((creator) => (
               <motion.div 
@@ -264,7 +283,6 @@ const App: React.FC = () => {
             </button>
           </div>
 
-          {/* Mobile Horizontal Scroll Container */}
           <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-10 no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible">
             {caseStudies.map((item) => (
               <motion.div 

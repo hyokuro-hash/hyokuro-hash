@@ -181,7 +181,7 @@ export const translations = {
     },
     stats: {
       partners: 'パートナー数',
-      followers: '総フォロワー数',
+      followers: '総フォロ워数',
       campaigns: 'キャンペーン実績',
       languages: '対応言語',
       langSuffix: 'ヶ国語'
@@ -224,7 +224,7 @@ export const translations = {
       desc: '各分野のトップエキスパートがAdstream | 1886と共に歩んでいます。',
       categories: ['すべて', 'ビューティー', 'ゲーム', 'フード', 'ライフスタイル', 'テック'],
       btnViewProfile: 'プロフィールを見る',
-      btnViewAll: 'クリエイター全員を見る'
+      btnViewAll: 'クリエイ터全員を見る'
     },
     cases: {
       title: '成功事例',
@@ -275,9 +275,9 @@ export const translations = {
       items: [
         { title: '1886 传承: 贯穿时代的本质', desc: '源自广告萌芽期 130 年的遗产。让经过时间验证的真实价值重新焕发活力。' },
         { title: '广告 (Ad): 最优匹配', desc: '创作者的感性与品牌价值的交汇点。基于数据提供最优匹配方案。' },
-        { title: '流动 (Stream): 内容的旅程', desc: '内容、收益、沟通的不断流转。构建跨越国界、走向全球的生态系统。' }
+        { title: '流动 (Stream): 内容的旅程', desc: '内容、收益、沟通的不断流转。构建跨越国界、走向全球의生态系统。' }
       ],
-      badge: '始于 1886 年的传承精神'
+      badge: '始于 1886 年의传承精神'
     },
     network: {
       tag: 'Global Pipeline',
@@ -420,6 +420,174 @@ export const translations = {
       title: 'Tính năng đang phát triển',
       desc: 'Trang web hiện đang được nâng cấp để mang lại trải nghiệm tốt hơn. Chúng tôi sẽ sớm quay lại với phiên bản hoàn thiện.',
       confirm: 'Tôi đã hiểu'
+    }
+  },
+  [Language.TH]: {
+    nav: ['บริการ', 'ครีเอเตอร์', 'ผลงานความสำเร็จ', 'สมัครเข้าร่วม'],
+    hero: {
+      tag: 'Empowering Your Digital Heritage',
+      title: 'ต้นกำเนิดการโฆษณาปี 1886 อนาคตสู่โลกดิจิทัล',
+      desc: 'เชื่อมต่อครีเอเตอร์และแบรนด์อย่างราบรื่นดั่งสายน้ำ Adstream | 1886 คือมาตรฐาน MCN ระดับโลกที่ผสานข้อมูลและความรู้สึกเข้าด้วยกัน',
+      btnApply: 'สมัครเป็นครีเอเตอร์',
+      btnContact: 'ติดต่อร่วมงานกับแบรนด์'
+    },
+    stats: {
+      partners: 'พันธมิตร',
+      followers: 'ผู้ติดตามทั้งหมด',
+      campaigns: 'แคมเปญ',
+      languages: 'ภาษาที่รองรับ',
+      langSuffix: ' ภาษา'
+    },
+    philosophy: {
+      title: 'ปรัชญาองค์กร',
+      items: [
+        { title: '1886 Heritage: แก่นแท้ที่เหนือกาลเวลา', desc: 'มรดก 130 ปีนับตั้งแต่จุดเริ่มต้นของการโฆษณา เรานำคุณค่าที่แท้จริงซึ่งผ่านการพิสูจน์ตามกาลเวลามาทำให้ไหลเวียนอีกครั้ง' },
+        { title: 'โฆษณา (Ad): การจับคู่ที่เหมาะสมที่สุด', desc: 'จุดที่ความรู้สึกของครีเอเตอร์มาบรรจบกับคุณค่าของแบรนด์ เรานำเสนอการจับคู่ที่เหมาะสมที่สุดโดยอิงจากข้อมูล' },
+        { title: 'กระแส (Stream): การเดินทางของคอนเทนต์', desc: 'การไหลเวียนของคอนเทนต์ รายได้ และการสื่อสารอย่างต่อเนื่อง สร้างระบบนิเวศที่ขยายไปทั่วโลกข้ามพรมแด원' }
+      ],
+      badge: 'จิตวิญญาณแห่งมรดกตั้งแต่ปี 1886'
+    },
+    network: {
+      tag: 'Global Pipeline',
+      title: 'รายละเอียดเครือข่ายระดับโลก',
+      desc: 'ท่อส่งระดับโลกที่เชื่อมต่อจากอเมริกาเหนือสู่เอเชีย สนับสนุนกลยุทธ์การขยายตัวสู่สากลผ่านโครงสร้างพื้นฐานในท้องถิ่น',
+      hubs: {
+        us: 'ศูนย์กลางการตลาดอเมริกาเหนือและพันธมิตรแบรนด์ระดับโลก',
+        kr: 'สำนักงานใหญ่ Adstream | 1886 และฝ่ายบริหารเทคโนโลยี/การดำเนินงาน',
+        cn: 'เครือข่าย MCN ในภูมิภาคจีนแผ่นดินใหญ่และศูนย์กลางการจัดจำหน่ายคอนเทนต์ขนาดใหญ่',
+        sea: 'กลยุทธ์การเติบโตในตลาดเกิดใหม่เอเชียตะวันออกเฉียงใต้และศูนย์กลางการแปลภาษา'
+      },
+      labels: ['พันธมิตรทั้งหมด', 'ภาษาที่ให้บริการ', 'ศูนย์กลางระดับโลก']
+    },
+    services: {
+      title: 'บริการหลัก',
+      desc: 'นำเสนอโซลูชัน MCN ครบวงจรเพื่อการเติบโตของคุณ',
+      items: [
+        { title: 'การจัดการครีเอเตอร์', desc: 'การจัดการอย่างเป็นระบบและคำแนะนำด้านอาชีพ' },
+        { title: 'การจับคู่โฆษณา', desc: 'การผสานแบรนด์และครีเอเตอร์อย่างลงตัวที่สุด' },
+        { title: 'การขยายตัวสู่สากล', desc: 'การปรับให้เข้ากับท้องถิ่นเพื่อเข้าสู่ตลาดต่างประเทศ' },
+        { title: 'การจัดการรายได้', desc: 'ระบบการจัดการรายได้ที่โปร่งใสและมีประสิทธิภาพ' },
+        { title: 'การแปลและล่าม', desc: 'ให้บริการแปลมืออาชีพครอบคลุม 6 ภาษาหลัก' }
+      ],
+      more: 'ดูรายละเอียดเพิ่มเติม'
+    },
+    creators: {
+      title: 'ครีเอเตอร์ที่เติบโตไปพร้อมกับเรา',
+      desc: 'ผู้เชี่ยวชาญระดับแนวหน้าจากแต่ละสาขาร่วมเดินทางไปกับ Adstream | 1886',
+      categories: ['ทั้งหมด', 'ความงาม', 'เกม', 'อาหาร', 'ไลฟ์สไตล์', 'เทคโนโลยี'],
+      btnViewProfile: 'ดูโปรไฟล์',
+      btnViewAll: 'ดูครีเอเตอร์ทั้งหมด'
+    },
+    cases: {
+      title: 'ผลงานความสำเร็จ',
+      desc: 'ผลลัพธ์เชิงกลยุทธ์ที่สร้างขึ้นร่วมกับแบรนด์ชั้นนำระดับโลก',
+      swipe: 'เลื่อนเพื่อชม'
+    },
+    cta: {
+      title: 'ขยายศักยภาพของคุณสู่ตลาดโลก',
+      desc: 'Adstream | 1886 ค้นพบคุณค่าที่แท้จริงของครีเอเตอร์และเติบโตไปพร้อมกัน',
+      btnApply: 'สมัครเข้าร่วมทันที',
+      btnBrand: 'ติดต่อแบรนด์'
+    },
+    footer: {
+      desc: 'กลุ่ม MCN ระดับโลกที่สืบสานมรดกการโฆษณาและบุกเบิกอนาคตดิจิทัล',
+      company: 'บริษัท',
+      companyLinks: ['เกี่ยวกับเรา', 'บริการ', 'ครีเอเตอร์'],
+      contact: 'ติดต่อเรา',
+      newsletter: 'จดหมายข่าว',
+      subscribe: 'สมัครสมาชิก',
+      rights: 'สงวนลิขสิทธิ์ทั้งหมด',
+      terms: 'เงื่อนไขการใช้งาน',
+      privacy: 'นโยบายความเป็นส่วนตัว'
+    },
+    wip: {
+      title: 'ฟีเจอร์นี้กำลังอยู่ระหว่างการพัฒนา',
+      desc: 'ขณะนี้เพจนี้กำลังได้รับการปรับปรุงเพื่อประสบการณ์ที่ดียิ่งขึ้น เราจะกลับมาพร้อมกับเวอร์ชันสมบูรณ์ในเร็วๆ นี้',
+      confirm: 'รับทราบแล้ว'
+    }
+  },
+  [Language.ID]: {
+    nav: ['Layanan', 'Kreator', 'Studi Kasus', 'Daftar'],
+    hero: {
+      tag: 'Empowering Your Digital Heritage',
+      title: 'Warisan Iklan 1886, Masa Depan Digital',
+      desc: 'Menghubungkan kreator dan merek secara mulus bagaikan aliran sungai. Adstream | 1886 adalah standar MCN global yang memadukan data dan intuisi.',
+      btnApply: 'Daftar Sebagai Kreator',
+      btnContact: 'Kerja Sama Merek'
+    },
+    stats: {
+      partners: 'Mitra',
+      followers: 'Total Pengikut',
+      campaigns: 'Kampanye',
+      languages: 'Bahasa yang Didukung',
+      langSuffix: ''
+    },
+    philosophy: {
+      title: 'Filosofi Perusahaan',
+      items: [
+        { title: 'Warisan 1886: Esensi Melintasi Zaman', desc: 'Warisan 130 tahun sejak dimulainya periklanan. Kami menghidupkan kembali nilai sejati yang telah teruji oleh waktu.' },
+        { title: 'Ad (Iklan): Pencocokan Optimal', desc: 'Titik temu antara kepekaan kreator dan nilai merek. Kami mengusulkan pencocokan optimal berdasarkan data.' },
+        { title: 'Stream (Aliran): Perjalanan Konten', desc: 'Aliran konten, pendapatan, dan komunikasi yang berkelanjutan. Membangun ekosistem global yang melampaui batas negara.' }
+      ],
+      badge: 'Semangat Warisan Sejak 1886'
+    },
+    network: {
+      tag: 'Global Pipeline',
+      title: 'Detail Pusat Jaringan Global',
+      desc: 'Pipa global yang menghubungkan Amerika Utara hingga Asia. Mendukung strategi globalisasi melalui infrastruktur lokal.',
+      hubs: {
+        us: 'Pusat pemasaran pasar Amerika Utara dan kemitraan merek global',
+        kr: 'Kantor pusat global Adstream | 1886 dan manajemen teknologi/operasional',
+        cn: 'Jaringan MCN wilayah Tiongkok dan pusat distribusi konten besar',
+        sea: 'Strategi pertumbuhan pasar berkembang Asia Tenggara dan pusat lokalisasi'
+      },
+      labels: ['Total Mitra', 'Bahasa Layanan', 'Pusat Global']
+    },
+    services: {
+      title: 'Layanan Utama',
+      desc: 'Menyediakan solusi MCN lengkap untuk pertumbuhan Anda.',
+      items: [
+        { title: 'Manajemen Kreator', desc: 'Manajemen sistematis dan panduan karier profesional' },
+        { title: 'Pencocokan Iklan', desc: 'Kombinasi optimal antara merek dan kreator' },
+        { title: 'Ekspansi Global', desc: 'Lokalisasi untuk memasuki pasar internasional' },
+        { title: 'Manajemen Pendapatan', desc: 'Sistem penyelesaian yang transparan dan efisien' },
+        { title: 'Penerjemahan', desc: 'Layanan penerjemahan profesional dalam 6 bahasa global' }
+      ],
+      more: 'Lihat Detail'
+    },
+    creators: {
+      title: 'Kreator yang Tumbuh Bersama Kami',
+      desc: 'Pakar terkemuka dari berbagai bidang bergabung dengan Adstream | 1886.',
+      categories: ['Semua', 'Kecantikan', 'Game', 'Kuliner', 'Gaya Hidup', 'Teknologi'],
+      btnViewProfile: 'Lihat Profil',
+      btnViewAll: 'Lihat Semua Kreator'
+    },
+    cases: {
+      title: 'Studi Kasus Berhasil',
+      desc: 'Hasil strategis yang diciptakan bersama merek-merek global terkemuka.',
+      swipe: 'Geser untuk melihat'
+    },
+    cta: {
+      title: 'Perluas Potensi Anda ke Pasar Global',
+      desc: 'Adstream | 1886 menemukan nilai sejati kreator dan tumbuh bersama.',
+      btnApply: 'Daftar Sekarang',
+      btnBrand: 'Inquiry Merek'
+    },
+    footer: {
+      desc: 'Grup MCN global yang mewarisi tradisi periklanan dan merintis masa depan digital.',
+      company: 'Perusahaan',
+      companyLinks: ['Tentang Kami', 'Layanan', 'Kreator'],
+      contact: 'Kontak',
+      newsletter: 'Buletin',
+      subscribe: 'Berlangganan',
+      rights: 'Seluruh hak cipta dilindungi.',
+      terms: 'Syarat Penggunaan',
+      privacy: 'Kebijakan Privasi'
+    },
+    wip: {
+      title: 'Fitur Sedang Dikembangkan',
+      desc: 'Halaman ini sedang ditingkatkan untuk pengalaman yang lebih baik. Kami akan segera kembali dengan versi lengkap.',
+      confirm: 'Mengerti'
     }
   }
 };
