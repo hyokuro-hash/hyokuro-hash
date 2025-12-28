@@ -184,7 +184,7 @@ export const translations = {
       followers: '総フォロワー数',
       campaigns: 'キャンペーン実績',
       languages: '対応言語',
-      langSuffix: 'ヶ국語'
+      langSuffix: 'ヶ国語'
     },
     philosophy: {
       title: '企業理念',
@@ -198,7 +198,7 @@ export const translations = {
     network: {
       tag: 'Global Pipeline',
       title: 'ネットワーク拠点 Detail',
-      desc: '北米からアジア까지繋がるグローバルパイプライン。現地のインフラを通じて、最適なグローバル戦略をサポートします。',
+      desc: '北米からアジアまで繋がるグローバルパイプライン。現地のインフラを通じて、最適なグローバル戦略をサポートします。',
       hubs: {
         us: '北米市場のマーケティングおよびグローバルブランドとのパートナーシップ拠点',
         kr: 'Adstream | 1886 グローバル本社および技術・運営統括',
@@ -233,14 +233,14 @@ export const translations = {
     },
     cta: {
       title: 'あなたの可能性をグローバル市場へ',
-      desc: 'Adstream | 1886 발견하고 함께 성장합니다.',
+      desc: 'Adstream | 1886はクリエイターの真の価値を発見し、共に成長します。',
       btnApply: '今すぐ応募する',
       btnBrand: 'ブランドのお問い合わせ'
     },
     footer: {
-      desc: '近代広告の遺産を継承し、デジタルの未来を切り拓くグローバルMCNグループです.',
+      desc: '近代広告の遺산を継承し、デジタルの未来を切り拓くグローバルMCNグループです。',
       company: '会社案内',
-      companyLinks: ['会社概要', 'サービス内容', 'クリエイター'],
+      companyLinks: ['회사 소개', '서비스', '크리에이터'],
       contact: 'お問い合わせ',
       newsletter: 'メールマガジン',
       subscribe: '購読する',
@@ -250,7 +250,7 @@ export const translations = {
     },
     wip: {
       title: '現在準備中の機能です',
-      desc: '現在、より良い体験を提供するためにページの高度화作業を行っております。近日中に公開予定です。',
+      desc: '現在、より良い体験を提供するためにページの高度化作業を行っております。近日中に公開予定です。',
       confirm: '承知いたしました'
     }
   },
@@ -273,7 +273,7 @@ export const translations = {
     philosophy: {
       title: '公司哲学',
       items: [
-        { title: '1886 传承: 贯穿时代的本质', desc: '源自广告萌芽期 130 年의 遗产。让经过时间验证的真实价值重新焕发活力。' },
+        { title: '1886 传承: 贯穿时代的本质', desc: '源自广告萌芽期 130 年的遗产。让经过时间验证的真实价值重新焕发活力。' },
         { title: '广告 (Ad): 最优匹配', desc: '创作者的感性与品牌价值的交汇点。基于数据提供最优匹配方案。' },
         { title: '流动 (Stream): 内容的旅程', desc: '内容、收益、沟通的不断流转。构建跨越国界、走向全球的生态系统。' }
       ],
